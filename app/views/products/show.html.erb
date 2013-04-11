@@ -10,8 +10,19 @@
   <%= @product.price %>
 </p>
 
+<ol>
+  <b>Current Reviews</b>
+  <% @reviews.each do |review| %>
+    <li><%= review.body %></li>
+  <%end%>
+</ol>
+
 <p>
   <a href="/reviews/new?product_id=<%= @product.id %>">New Review</a>
+</p>
+
+<p>
+
 </p>
 
 
