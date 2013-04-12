@@ -1,6 +1,20 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  # before_filter :cart
+
+  # def cart
+  #   @cart = Product.where(:oncart => true)
+  # end
+
+  # def addtocart
+  #   @product = Product.find(params[:id])
+  # end
+
+  # def removefromcart
+  #   @product = Product.find(params[:id])
+  # end
+  
   def index
     @products = Product.all
 
