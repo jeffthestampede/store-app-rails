@@ -3,10 +3,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   # before_filter :cart
 
-  # def cart
-  #   @cart = Product.where(:incart => true)
-  # end
-
   # def addtocart
   #   @product = Product.find(params[:id])
   #   @product.incart = true
