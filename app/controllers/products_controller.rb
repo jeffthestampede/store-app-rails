@@ -4,20 +4,28 @@ class ProductsController < ApplicationController
   # before_filter :cart
 
   # def cart
-  #   @cart = Product.where(:oncart => true)
+  #   @cart = Product.where(:incart => true)
   # end
 
   # def addtocart
   #   @product = Product.find(params[:id])
+  #   @product.incart = true
+  #   @product.save
   # end
 
   # def removefromcart
   #   @product = Product.find(params[:id])
+  #   @product.incart = false
+  #   @product.save
   # end
   
+  def cart
+    @cart = Product.where(:incart => true)
+  end
+
   def index
     @products = Product.all
-
+    @cart = Product.where(:incart => true)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

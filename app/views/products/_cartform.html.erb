@@ -1,0 +1,11 @@
+<%= form_for(@product) do |f| %>
+<div class="cart">
+<% if @product.incart == false %>
+    <%= f.hidden_field :incart, :value => true %>
+        <%= f.submit "Add to Cart" %> 
+        <% else %>
+    <%= f.hidden_field :incart, :value => false %>
+        <%= f.submit "Remove from Cart" %>
+<% end %>
+  </div>
+<% end %>

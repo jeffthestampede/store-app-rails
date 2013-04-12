@@ -7,7 +7,7 @@
 
 <p>
   <b>Price:</b>
-  <%= @product.price %>
+  <%= number_to_currency(@product.price) %>
 </p>
 
 <ol>
@@ -25,7 +25,7 @@
 
 </p>
 
-<%= render 'cart' %>
+<%= render 'cartform' %>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
