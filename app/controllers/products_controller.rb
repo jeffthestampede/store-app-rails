@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @reviews = Review.where(:product_id => @product.id)
+    @cart = Product.where(:incart => true)
     respond_to do |format|
       format.html # show.html.erb
       format.json { renpder json: @product }

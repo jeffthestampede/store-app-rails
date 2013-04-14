@@ -3,7 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 */
 .cartindex {
-border: 2px solid black;
-margin-left: -1px;
-padding-bottom: 50px;
+  border: 2px solid black;
+  padding-bottom: 50px;
+  position: fixed;
+  margin-left: 950px;
+  padding: 10px;
+}
+
+.productindex {
+  list-style: none;
+  border: 1px solid black;
+  float: left;
+  padding: 10px;
+}
+
+.imageindex {
+  width: 410px; 
+  height: auto;
+}
+.container {
+  border: 1px solid purple;
 }

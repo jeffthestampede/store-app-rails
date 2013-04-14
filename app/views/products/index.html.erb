@@ -1,42 +1,31 @@
-<h1>Product Listings</h1>
+<h1>Jeff's Favorite Things</h1>
 
 <div class="row">
-<div class="span9">
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>In Cart</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="span12">
+
+
+<%= render 'cart' %>
+
 
 <% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= number_to_currency(product.price) %></td>
-    <td><%= product.incart %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <!-- <td><a href="/reviews/new?product_id=<%= product.id %>">New Review</a></td> -->
-  </tr>
+<ul class="productindex">
+  <li class="imageindex"><%= image_tag(product.imageurl) %></li>
+  <li><%= product.name %></li>
+  <li><%= number_to_currency(product.price) %></li>
+  <td><%= link_to 'Show', product %></td>
+  <li><%= link_to 'Edit', edit_product_path(product) %></li>
+</ul>
 <% end %>
-</table>
-<br />
+<br/>
 
 
 <%= link_to 'New Product', new_product_path %>
+
 </div>
 
-<div class="cartindex span3">
-<p>SHOPPING CART</p>
-<% @cart.each do |product| %>
-<ul>
-  <li><%= product.name %><br><%= number_to_currency(product.price) %>
-</ul>
-<% end %>
-</div>
+
+
+
+
 
 </div>
