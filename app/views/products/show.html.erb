@@ -14,12 +14,14 @@
   <%= number_to_currency(@product.price) %>
 </p>
 
-<ol>
+<p>
   <b>Current Reviews</b>
+  <ul>
   <% @reviews.each do |review| %>
     <li><%= review.body %></li>
   <%end%>
-</ol>
+  </ul>
+</p>
 
 <p>
   <a href="/reviews/new?product_id=<%= @product.id %>">New Review</a>

@@ -1,31 +1,33 @@
-<h1>Jeff's Favorite Things</h1>
+<h1 class="header">Jeff's Favorite Things</h1>
 
 <div class="row">
-<div class="span12">
+  <div class="span12">
+    <%= render 'cart' %>
+    <% @products.each do |product| %>
+    <ul class="productindex">
+      <li class="imageindex"><%= image_tag(product.imageurl) %></li>
+      <li><%= product.name %></li>
+      <li><%= number_to_currency(product.price) %></li>
+      <li><%= link_to 'Product Details', product %></li>
+      <li><%= link_to 'Edit', edit_product_path(product) %></li>
+      <li>
+        <%= form_for(product) do |f| %>
+        <div class="cart">
+        <% if product.incart == false %>
+          <%= f.hidden_field :incart, :value => true %>
+          <%= f.submit "Add to Cart" %> 
+        <% else %>
+          <%= f.hidden_field :incart, :value => false %>
+          <%= f.submit "Remove from Cart" %>
+        <% end %>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+    <% end %>
+    <br/>
 
+    <%= link_to 'New Product', new_product_path %>
 
-<%= render 'cart' %>
-
-
-<% @products.each do |product| %>
-<ul class="productindex">
-  <li class="imageindex"><%= image_tag(product.imageurl) %></li>
-  <li><%= product.name %></li>
-  <li><%= number_to_currency(product.price) %></li>
-  <td><%= link_to 'Show', product %></td>
-  <li><%= link_to 'Edit', edit_product_path(product) %></li>
-</ul>
-<% end %>
-<br/>
-
-
-<%= link_to 'New Product', new_product_path %>
-
-</div>
-
-
-
-
-
-
+  </div>
 </div>

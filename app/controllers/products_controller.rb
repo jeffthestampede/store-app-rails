@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @cart = Product.where(:incart => true)
+    @total = (@cart.map {|product| product.price}).reduce(:+)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -34,6 +35,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @reviews = Review.where(:product_id => @product.id)
     @cart = Product.where(:incart => true)
+    @total = (@cart.map {|product| product.price}).reduce(:+)
     respond_to do |format|
       format.html # show.html.erb
       format.json { renpder json: @product }

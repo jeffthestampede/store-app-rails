@@ -1,0 +1,17 @@
+<div class="cartindex">
+  <p class="cart">SHOPPING CART</p>
+  <% @cart.each do |product| %>
+  <ul>
+    <li><%= product.name %><br><%= number_to_currency(product.price) %>   
+      <%= form_for(product) do |f| %>
+      <div>
+      <% if product.incart == true %>
+        <%= f.hidden_field :incart, :value => false %>
+        <%= f.submit "Remove" %>
+      <% end %>
+      </div>
+      <% end %>  
+  </ul>
+  <% end %>
+   <p class="total">Total: <%= number_to_currency(@total) %></p>
+</div>

@@ -2,25 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+body {
+  background-color: #EDEBE6 !important;
+}
+
 .cartindex {
   border: 2px solid black;
   padding-bottom: 50px;
   position: fixed;
-  margin-left: 950px;
+  margin-left: 940px;
   padding: 10px;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 3px;
+  background-color: #D6E1C7;
+}
+
+.cartindex>ul {
+  list-style: none;
+  font-family: 'Nunito', sans-serif;
 }
 
 .productindex {
   list-style: none;
-  border: 1px solid black;
+  border: 2px solid black;
   float: left;
   padding: 10px;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 3px;
+  font-family: 'Nunito', sans-serif;
+  background-color: white;
 }
 
 .imageindex {
   width: 410px; 
   height: auto;
+  border-radius: 3px;
 }
-.container {
-  border: 1px solid purple;
+
+h1 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.total {
+  float: right;
+}
+
+.header {
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 3px;
+  margin-left: 120px;
+  margin-right: 120px;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  background-color: #94C7B6;
+}
+
+.cart {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  font-style: bold;
 }
